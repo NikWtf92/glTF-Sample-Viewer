@@ -84,9 +84,9 @@ const appCreated = createApp({
             validationReportDescription: {},
 
             ibl: true,
-            iblIntensity: 0.0,
+            iblIntensity: 1.0,
             punctualLights: true,
-            renderEnv: true,
+            renderEnv: false,
             blurEnv: true,
             clearColor: "",
             environmentRotations: [

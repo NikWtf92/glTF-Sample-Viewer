@@ -62,16 +62,16 @@ class UIModel {
         this.specularEnabled = app.specularChanged.pipe();
         this.emissiveStrengthEnabled = app.emissiveStrengthChanged.pipe();
         this.volumeScatteringEnabled = app.volumeScatteringChanged.pipe();
-        this.iblEnabled = app.iblChanged.pipe();
+        this.iblEnabled = app.iblChanged.pipe(startWith(true));
         this.iblIntensity = app.iblIntensityChanged.pipe();
         this.punctualLightsEnabled = app.punctualLightsChanged.pipe();
-        this.renderEnvEnabled = app.renderEnvChanged.pipe();
+        this.renderEnvEnabled = app.renderEnvChanged.pipe(startWith(false));
         this.blurEnvEnabled = app.blurEnvChanged.pipe();
         this.addEnvironment = app.addEnvironmentChanged.pipe();
         this.captureCanvas = app.captureCanvas.pipe();
         this.cameraValuesExport = app.cameraExport.pipe();
 
-        const initialClearColor = "#303542";
+        const initialClearColor = "#000000";
         this.app.clearColor = initialClearColor;
         this.clearColor = app.colorChanged.pipe(
             startWith(initialClearColor),
